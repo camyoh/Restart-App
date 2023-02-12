@@ -56,9 +56,11 @@
 		1CE2ED1929996ECF00A95A68 /* restart */ = {
 			isa = PBXGroup;
 			children = (
+				1CE2ED3029997FBD00A95A68 /* Utilities */,
+				1CE2ED2F29997FA700A95A68 /* Views */,
 				1CE2ED2D29997CDD00A95A68 /* Sounds */,
 				1CE2ED1A29996ECF00A95A68 /* restartApp.swift */,
-				1CE2ED1C29996ECF00A95A68 /* ContentView.swift */,
+				1CE2ED2E29997F9800A95A68 /* Screens */,
 				1CE2ED1E29996ED000A95A68 /* Assets.xcassets */,
 				1CE2ED2029996ED000A95A68 /* restart.entitlements */,
 				1CE2ED2129996ED000A95A68 /* Preview Content */,
@@ -81,6 +83,28 @@
 				1CE2ED2929997CD700A95A68 /* success.m4a */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		1CE2ED2E29997F9800A95A68 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1CE2ED1C29996ECF00A95A68 /* ContentView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1CE2ED2F29997FA700A95A68 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1CE2ED3029997FBD00A95A68 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
