@@ -14,6 +14,7 @@ struct OnboardingView: View {
   
   @State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
   @State private var buttonOffset: CGFloat = 0
+  @State private var isAnimating: Bool = false
   
   // MARK: - BODY
   
@@ -126,9 +127,12 @@ struct OnboardingView: View {
         } //: FOOTER
         .frame(width: buttonWidth, height: 80, alignment: .center)
         .padding()
-      }
-    } //: VSTACK
-  } //: ZSTACK
+      } //: VSTACK
+    } //: ZSTACK
+    .onAppear {
+      isAnimating = true
+    }
+  }
 }
 
 struct OnboardingView_Previews: PreviewProvider {
