@@ -54,6 +54,7 @@ struct HomeView: View {
       .buttonStyle(.borderedProminent)
       .buttonBorderShape(.capsule)
       .controlSize(.large)
+      .padding()
     } //: VSTACK
   }
 }
