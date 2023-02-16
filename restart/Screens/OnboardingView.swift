@@ -12,6 +12,9 @@ struct OnboardingView: View {
   
   @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
   
+  @State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
+  @State private var buttonOffset: CFloat = 0
+  
   // MARK: - BODY
   
   var body: some View {
@@ -100,14 +103,15 @@ struct OnboardingView: View {
             }
             .foregroundColor(.white)
           .frame(width: 80, height: 80, alignment: .center)
-          .onTapGesture {
-            isOnboardingViewActive = false
-          }
+          .offset(x: 0)
+          .gesture(
+            DragGesture()
+          )//: GESTURE
             
             Spacer()
           } //: HSTACK
         } //: FOOTER
-        .frame(height: 80, alignment: .center)
+        .frame(width: buttonWidth, height: 80, alignment: .center)
         .padding()
       }
     } //: VSTACK
