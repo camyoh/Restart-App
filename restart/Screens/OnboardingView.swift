@@ -13,7 +13,7 @@ struct OnboardingView: View {
   @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
   
   @State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
-  @State private var buttonOffset: CFloat = 0
+  @State private var buttonOffset: CGFloat = 0
   
   // MARK: - BODY
   
@@ -103,9 +103,14 @@ struct OnboardingView: View {
             }
             .foregroundColor(.white)
           .frame(width: 80, height: 80, alignment: .center)
-          .offset(x: 0)
+          .offset(x: buttonOffset)
           .gesture(
             DragGesture()
+              .onChanged({ gesture in
+                if gesture.translation.width > 0 {
+                  buttonOffset = gesture.translation.width
+                }
+              })
           )//: GESTURE
             
             Spacer()
