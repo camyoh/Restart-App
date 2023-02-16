@@ -12,6 +12,8 @@ struct CircleGroupView: View {
   
   @State var ShapeColor: Color
   @State var ShapeOpacity: Double
+  @State private var isAnimating: Bool = false
+  
   private let radious = UIScreen.main.bounds.width * 0.65
   
   // MARK: - BODY
@@ -25,6 +27,13 @@ struct CircleGroupView: View {
         .stroke(ShapeColor.opacity(ShapeOpacity), lineWidth: radious/3)
         .frame(width: radious, height: radious, alignment: .center)
     } //: ZSTACK
+    .blur(radius: isAnimating ? 0 : 10)
+    .opacity(isAnimating ? 1 : 0)
+    .scaleEffect(isAnimating ? 1 : 0.5)
+    .animation(.easeOut(duration: 1), value: isAnimating)
+    .onAppear {
+      isAnimating = true
+    }
   }
 }
 
