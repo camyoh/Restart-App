@@ -63,6 +63,11 @@ struct HomeView: View {
       .controlSize(.large)
       .padding()
     } //: VSTACK
+    .onAppear {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+        isAnimating = true
+      })
+    }
   }
 }
 
