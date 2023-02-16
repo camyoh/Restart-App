@@ -107,10 +107,12 @@ struct OnboardingView: View {
             }
             .foregroundColor(.white)
           .frame(width: 80, height: 80, alignment: .center)
+          .onTapGesture {
+            isOnboardingViewActive = false
+          }
             
             Spacer()
           } //: HSTACK
-          
         } //: FOOTER
         .frame(height: 80, alignment: .center)
         .padding()
