@@ -47,7 +47,9 @@ struct HomeView: View {
           .font(.system(.title3, design: .rounded))
           .fontWeight(.bold)
       } //: BUTTON
-
+      .buttonStyle(.borderedProminent)
+      .buttonBorderShape(.capsule)
+      .controlSize(.large)
     } //: VSTACK
   }
 }
