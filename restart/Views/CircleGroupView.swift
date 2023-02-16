@@ -12,17 +12,18 @@ struct CircleGroupView: View {
   
   @State var ShapeColor: Color
   @State var ShapeOpacity: Double
+  private let radious = UIScreen.main.bounds.width * 0.65
   
   // MARK: - BODY
   
   var body: some View {
     ZStack {
       Circle()
-        .stroke(ShapeColor.opacity(ShapeOpacity), lineWidth: 40)
-        .frame(width: 260, height: 260, alignment: .center)
+        .stroke(ShapeColor.opacity(ShapeOpacity), lineWidth: radious/6)
+        .frame(width: radious, height: radious, alignment: .center)
       Circle()
-        .stroke(ShapeColor.opacity(ShapeOpacity), lineWidth: 80)
-        .frame(width: 260, height: 260, alignment: .center)
+        .stroke(ShapeColor.opacity(ShapeOpacity), lineWidth: radious/3)
+        .frame(width: radious, height: radious, alignment: .center)
     } //: ZSTACK
   }
 }
